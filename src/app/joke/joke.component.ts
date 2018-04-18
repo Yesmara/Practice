@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Joke } from '../joke';
 
 @Component({
   selector: 'app-joke',
   templateUrl: './joke.component.html',
   styleUrls: ['./joke.component.css']
 })
-export class JokeComponent implements OnInit {
+export class JokeComponent {
 
-  joke: string;
+  joke: Joke;
 
-constructor() {
-    this.joke = 'What did the cheese say when it looked in the mirror?';
+  constructor() {
+    this.joke = new Joke(
+      'What did the cheese say when it looked in the mirror?',
+      'Halloumi'
+    );
+
   }
-
-  ngOnInit() {
-  }
-
 }
